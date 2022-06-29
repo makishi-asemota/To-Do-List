@@ -1,13 +1,21 @@
+*{
+    color: white;
+}
+
+input{
+    color: black;
+}
+
 body {
-    background-color: #399bc9;
+    background-color: #cffafe;
     margin: 0;
 }
 
 #container {
-    height: 1;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 0.5fr 3fr;
     grid-template-areas: 
         "header header"
         "sidebar content";
@@ -15,25 +23,25 @@ body {
 
 .header {
     grid-area: header;
-    background-color: rgb(122, 82, 231);
-    border: 1px solid green;
+    background-color: #0e7490;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
 }
 
 .todo {
     grid-area: content;
+    padding-top: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column; 
-    border: 1px solid black;
 }
 
 .sidebar {
     grid-area: sidebar;
-    background-color: rgb(205, 138, 236);
+    background-color: #06b6d4;
     font-size: 20px;
     padding: 10px;
-    border: 1px solid red;
 }
 
 .footer{
@@ -42,6 +50,11 @@ body {
 
 form > button{
     width: 300px;
+}
+
+.newTask{
+    background-color: #06b6d4;
+    border: none;
 }
 
 .addBtn {
@@ -66,18 +79,50 @@ input {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.taskContainer {
-    border: 1px solid white;
-    gap: 10px;
+.containerTwo{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 550px;
 }
 
 .eachtask{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
 }
 
-.containerTwo{
+.remove-task{
+    background-color: #06b6d4;
+    justify-content: flex-end;
+    height: 30px;
+}
+
+.taskContainer{
+    gap: 15px;
+}
+
+.sidebar > button{
+    background-color: #0e7490;
+    border: none;
+}
+
+#projectList > button{
+    background-color: #0e7490;
+    border: none;
+}
+
+.eachproject{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove-project{
+    background-color: #0e7490;
+    justify-content: flex-end;
+    height: 30px;
 }

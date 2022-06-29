@@ -29,9 +29,15 @@ function createToDo() {
             eachTask.classList.add("eachtask");
             allTasks.appendChild(eachTask);
 
+            for (let key in myTaskLists) {
+                const text = document.createElement('p');
+                text.textContent = (`${myTaskLists[key]}`);
+                eachTask.appendChild(text);
+            }
+
             const removeTaskBtn = document.createElement("button");
             removeTaskBtn.classList.add("remove-task");
-            removeTaskBtn.textContent = "Remove Task";
+            removeTaskBtn.textContent = "Delete";
 
             removeTaskBtn.dataset.linkedArray = index;
             eachTask.appendChild(removeTaskBtn);
@@ -44,12 +50,6 @@ function createToDo() {
                 eachTask.remove();
                 displayTasks();
             };
-
-            for (let key in myTaskLists) {
-                const text = document.createElement('p');
-                text.textContent = (`${myTaskLists[key]}`);
-                eachTask.appendChild(text);
-            }
             index++
         });
     };
@@ -78,30 +78,6 @@ function createToDo() {
 
         document.getElementById('list').style.display = "none";
     };
-
-
-
-
-
-    
-    
-    // const deletebutton = document.querySelector('.delete');
-    // const taskInput = document.querySelector('#currentTask');
-    
-    
-   
-    // addButton.addEventListener('click', addTask);
-    // function addTask() {
-        
-    //     const checkbox = document.createElement('input');
-    //     checkbox.type = "checkbox";
-    //     eachTask.appendChild(checkbox);
-    //     eachTask.appendChild(taskInput);
-    //     allTasks.appendChild(eachTask);
-    // }
-
-
-
 };
 
 export default createToDo();
